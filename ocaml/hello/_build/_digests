@@ -1,0 +1,6 @@
+"Rule: ocaml: ml -> cmo & cmi (%=hello )": "V\253\227\"\187H\017\185\181(9\228\226\254\003R"
+"Resource: /home/aifs2/doylew/Public/practice/ocaml/hello.ml": "\207'o\005B\021ig\168\252\138\005w\141Q\200"
+"Rule: ocaml dependencies ml (%=hello )": "\196\199{?\236\238\007\003\012O\t\017\189\182\213\150"
+"Resource: /home/aifs2/doylew/Public/practice/ocaml/hello/hello.ml": "\022<=\199\150&p\1834\016\184\r\160\160\214\143"
+"Rule: ocaml: ml & cmi -> cmx & o (%=hello )": "\202j\191\139\027v7\247%\224\244D\147\030\227\019"
+"Rule: ocaml: cmx* & o* -> native (%=hello )": "\218\015\021\179\165~\133\155\198=^n3V\238\172"
