@@ -36,7 +36,6 @@ class Linked_List:
     '''
     def __init__(self, orig = None):
         self._head = None
-        self._size = 0
         if orig != None and \
            (type(orig) == list or type(orig) == Linked_List):
             for x in orig:
@@ -127,7 +126,6 @@ class Linked_List:
     '''
     def add_front(self, value):
         self._head = self.List_Node(value, self._head)
-        self._size += 1
 
     '''
     Add a node after the tail node.
@@ -137,13 +135,11 @@ class Linked_List:
         new_node = self.List_Node(value)
         if self._head == None:
             self._head = new_node
-            self._size += 1
         else:
             current = self._head
             while current._next != None:
                 current = current._next
             current._next = new_node
-            self._size += 1
 
             '''
             Uncommenting these two lines produces a circular list
@@ -184,7 +180,6 @@ class Linked_List:
                 prev = prev._next
             new_node = self.List_Node(value, prev._next)
             prev._next = new_node
-            self._size += 1
 
     '''
     Remove entry in list, at given index
@@ -196,14 +191,12 @@ class Linked_List:
             if index == 0:
                 victim = self._head
                 self._head = self._head._next
-                self._size -= 1
             else:
                 prev = self._head
                 for x in xrange(index - 1):
                     prev = prev._next
                 victim = prev._next
                 prev._next = victim._next
-                self._size -= 1
             return victim._value
 
     '''
@@ -217,8 +210,7 @@ class Linked_List:
     You must modify this method.
     '''
     def is_empty(self):
-        self.update_size()
-        return self._size <= 0
+        return True
     
     '''
     Recompute the _size field.
@@ -228,36 +220,28 @@ class Linked_List:
 
     '''
     def update_size(self):
-        real = 0
-        for x in self:
-          real += 1
-        self._size = real 
+        return None
     
     '''
     Return self._size
     You must modify this method.
     '''
     def __len__(self):
-        return self._size
+        return 0
 
     '''
     Return the VALUE in the head node, or None if empty.
     You must modify this method.
     '''
     def first(self):
-        if self.is_empty():
-          return None
-        
-        return self[0]
+        return None
  
     '''
     Return the VALUE in the tail node, or None if empty.
     You must modify this method.
     '''
     def last(self):
-        if self.is_empty():
-          return None
-        return self[len(self)-1]
+        return None
 
     '''
     Return a new Linked_List, with self's values stored in 
@@ -267,26 +251,21 @@ class Linked_List:
     You must modify this method.
     '''
     def reversed(self):
-        p = Linked_List()
-        index = len(self) -1
-        for x in self: 
-          p.add_tail(self[index])
-          index -= 1
-        return p
+        return Linked_List()
 
     '''
     Add the value to the front of the list.
     You must modify this method.
     '''
     def push_front(self, value):
-        self.add_front(value)
+        return None
     
     '''
     Add the value to the end of the list.
     You must modify this method.
     '''
     def push_back(self, value):
-        self.add_tail(value)
+        return None
     
     '''
     Remove the value from the front of the list.
@@ -295,11 +274,7 @@ class Linked_List:
     You must modify this method.
     '''
     def pop_front(self):
-        if self.is_empty():
-          raise IndexError
-        front = self[0]
-        del self[0]
-        return front
+        return None
     
     '''
     Remove the value from the end of the list.
@@ -308,11 +283,7 @@ class Linked_List:
     You must modify this method.
     '''
     def pop_back(self):
-        if self.is_empty():
-          raise IndexError
-        back = self[len(self)-1]
-        del self[len(self)-1]
-        return back
+        return None
     
     '''
     Remove the node at the given index, and return its old value.
@@ -321,13 +292,7 @@ class Linked_List:
     You must modify this method.
     '''
     def pop(self, index):
-        if type(index) != int:
-          raise TypeError
-        if ((index < 0) or (index >= len(self))):
-          raise IndexError
-        r = self[index]
-        del self[index]
-        return r
+        return None
 
     '''
     Return a new list, which is the set difference:
@@ -339,19 +304,7 @@ class Linked_List:
     You must modify this method.
     '''
     def __sub__(self, other_list):
-        t = type(other_list)
-        r = Linked_List()
-        for x in self:  
-          cap = 1
-          for y in other_list:
-            if x != y and cap != 0:
-              cap += 1
-            if x == y:
-              cap = 0
-          if cap != 0:
-            cap = 1
-            r.push_back(x)
-        return r
+        return None
 
     '''
     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -381,7 +334,5 @@ def main():
     pi.pop(1)
     print 'No dot:          ', pi
     print 'Minus[1,2]:      ', (pi - Linked_List([1,2]))
+                
 if __name__ == '__main__': main()
-
-
-
