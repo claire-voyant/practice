@@ -1,0 +1,5 @@
+"Resource: /home/aifs2/doylew/Public/practice/ocaml/mnt/mnt.ml": "\143\021\210\142\bN\220\029bi\167\233\229wH\229"
+"Rule: ocaml: ml & cmi -> cmx & o (%=mnt )": "\217\201\232@\139EO\180\224\188[2\143bg\160"
+"Rule: ocaml: cmx* & o* -> native (%=mnt )": "`\242P\209\198\182\175lx \247Cb\183\1272"
+"Rule: ocaml: ml -> cmo & cmi (%=mnt )": "m\186\199\155an\223_\195\003z\180\215\011|\249"
+"Rule: ocaml dependencies ml (%=mnt )": "\"\243\229\131cj\171\133\148m\128*\195w\220\197"

@@ -241,7 +241,10 @@ legnthPlusOne xd = w `x` 1
 --  where w = length xs
 
 isPalindrome :: (Eq a) => [a] -> Bool
-isPalindrome x = x == y where y = reverse x
+isPalindrome (a:x)
+  | (length x) == 0 = True
+  | a /= (x !! (length x - 1)) = False
+  | a == (x !! (length x - 1)) = isPalindrome (take (length x -1) x)
 
 myAbs :: Integer -> Integer
 myAbs x = if x >= 0 then x else (x * (-1))
